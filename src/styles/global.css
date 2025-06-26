@@ -1,9 +1,87 @@
-@import './variables.css';
+@import './Variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
   font-family: var(--font-main);
-  margin: 0;
-  padding: 0;
+  line-height: 1.6;
+}
+
+/* Layout principal */
+.app-container {
+  min-height: 100vh;
+  padding-top: 60px; /* Actualizado para navbar de 60px */
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--texto-principal);
+}
+
+p {
+  color: var(--texto-secundario);
+}
+
+/* === ESTILOS DE BOTONES === */
+.btn {
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn--green {
+  background: var(--boton-verde);
+  color: white;
+  box-shadow: 0 4px 15px rgba(63, 185, 80, 0.3);
+}
+
+.btn--green:hover {
+  background: #2ea043;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(63, 185, 80, 0.4);
+}
+
+.btn--blue {
+  background: var(--boton-azul);
+  color: white;
+  box-shadow: 0 4px 15px rgba(47, 129, 247, 0.3);
+}
+
+.btn--blue:hover {
+  background: #1f6feb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(47, 129, 247, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-container {
+    padding-top: 60px;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
 }

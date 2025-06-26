@@ -1,0 +1,375 @@
+.home-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Añadir padding lateral */
+}
+
+/* === SECCIÓN HERO === */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Altura completa de la pantalla */
+  padding: 2rem 0; /* Padding vertical */
+  gap: 3rem;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px; /* Reducir para móviles */
+  max-width: 700px; /* Limitar ancho máximo */
+  text-align: center;
+  padding: 2rem; /* Reducir padding */
+}
+
+.greeting {
+  font-size: 1.4rem; /* Aumentar tamaño */
+  color: var(--detalles);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.name {
+  font-size: 4rem; /* Aumentar de 3rem a 4rem */
+  color: var(--texto-principal);
+  font-weight: bold;
+  margin: 0.5rem 0;
+  line-height: 1.1;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.role {
+  font-size: 2.5rem; /* Aumentar de 2rem a 2.5rem */
+  color: var(--texto-secundario);
+  margin: 1.5rem 0;
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.tech-stack {
+  font-size: 1.4rem; /* Aumentar tamaño */
+  color: var(--detalles);
+  margin-bottom: 2rem;
+  font-style: italic;
+  animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.description {
+  font-size: 1.2rem; /* Aumentar tamaño */
+  color: var(--texto-secundario);
+  max-width: 650px; /* Aumentar ancho máximo */
+  margin: 0 auto 3rem auto; /* Más margen inferior */
+  line-height: 1.7; /* Mejor espaciado */
+  animation: fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem; /* Más espacio entre botones */
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease-out 1s both;
+}
+
+.profile-image {
+  width: 350px; /* Aumentar tamaño */
+  height: 350px;
+  border-radius: 50%;
+  border: 4px solid var(--boton-verde);
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(63, 185, 80, 0.3);
+  animation: fadeInRight 0.8s ease-out 0.5s both;
+}
+
+/* === SECCIÓN ABOUT === */
+.about-section {
+  margin-top: 6rem; /* Más espacio */
+  padding: 5rem 2rem; /* Más padding */
+  background-color: var(--contenedores-cards);
+  border-radius: 15px;
+  margin-bottom: 3rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem; /* Más espacio */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-image {
+  flex: 0 0 280px; /* Aumentar tamaño */
+  display: flex;
+  justify-content: center;
+}
+
+.about-profile-image {
+  width: 250px; /* Aumentar tamaño */
+  height: 320px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid var(--borde-separadores);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+  flex: 1;
+  max-width: 550px; /* Aumentar ancho */
+  min-width: 300px;
+}
+
+.section-title {
+  font-size: 2.5rem; /* Aumentar tamaño */
+  font-weight: bold;
+  color: var(--texto-principal);
+  margin-bottom: 2rem;
+}
+
+.about-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: var(--texto-secundario);
+  font-size: 1.1rem; /* Aumentar tamaño */
+}
+
+.about-commitment {
+  margin-bottom: 2.5rem;
+  color: var(--detalles);
+  line-height: 1.7;
+  font-size: 1.1rem; /* Aumentar tamaño */
+}
+
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === ESTILOS PARA BOTONES === */
+.btn-outline {
+  padding: 0.8rem 1.6rem; /* Botones más grandes */
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid var(--boton-verde);
+  color: var(--boton-verde);
+  background-color: transparent;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.btn-outline:hover {
+  background-color: var(--boton-verde);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: 90vh;
+    gap: 2rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .role {
+    font-size: 2.2rem;
+  }
+
+  .profile-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about-content {
+    gap: 3rem;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0 0.5rem;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    min-height: 80vh;
+    padding: 3rem 0;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    padding: 1rem;
+    min-width: 280px;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .role {
+    font-size: 1.8rem;
+  }
+
+  .tech-stack {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  .profile-image {
+    width: 250px;
+    height: 250px;
+    order: -1; /* Imagen arriba en móvil */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .about-image {
+    order: -1; /* Imagen arriba en móvil */
+    flex: none;
+  }
+
+  .about-section {
+    margin-top: 4rem;
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .about-profile-image {
+    width: 220px;
+    height: 280px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 70vh;
+    padding: 2rem 0;
+  }
+
+  .hero-content {
+    padding: 0.5rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .role {
+    font-size: 1.5rem;
+  }
+
+  .tech-stack {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-buttons .btn {
+    max-width: 250px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .about-profile-image {
+    width: 180px;
+    height: 230px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-description,
+  .about-commitment {
+    font-size: 1rem;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .name {
+    font-size: 2.2rem;
+  }
+
+  .role {
+    font-size: 1.3rem;
+  }
+
+  .profile-image {
+    width: 170px;
+    height: 170px;
+  }
+
+  .hero-buttons .btn {
+    max-width: 220px;
+  }
+}

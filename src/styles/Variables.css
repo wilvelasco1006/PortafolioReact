@@ -1,13 +1,24 @@
 :root {
+  /* Colores principales */
   --fondo-principal: #0d1117;
   --contenedores-cards: #161b22;
   --borde-separadores: #21262d;
   --texto-principal: #f0f6fc;
   --texto-secundario: #c9d1d9;
   --detalles: #8b949e;
+  
+  /* Botones y accents */
   --boton-verde: #3fb950;
   --boton-azul: #2f81f7;
   --boton-rojo: #f85149;
   --advertencia: #d29922;
+  
+  /* Variables que usa el Navbar */
+  --color-accent-green: #3fb950;
+  --color-text-secondary: #c9d1d9;
+  --color-border: #21262d;
+  --color-description: #8b949e;
+  
+  /* Fuentes */
   --font-main: 'Inter', sans-serif;
 }
