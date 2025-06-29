@@ -1,9 +1,12 @@
+import React from 'react';
+import './Store.css'
+import Card from '../../components/Card'
 const Store = () => {
     return (
         <div className="store">
-            <h1>Store Page</h1>
-            <p>Welcome to the store! Here you can find various products.</p>
-            {/* Add more content or components related to the store here */}
+            <h1>Tienda Digital</h1>
+            <p>¡Bienvenido a la tienda! Aquí puedes encontrar varios productos/servicios que ofrezco.</p>
+            <Card/>
         </div>
     )
 }

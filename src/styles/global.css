@@ -16,7 +16,7 @@ body {
 /* Layout principal */
 .app-container {
   min-height: 100vh;
-  padding-top: 60px; /* Actualizado para navbar de 60px */
+  padding-top: 60px;
 }
 
 .main-content {
@@ -36,46 +36,174 @@ p {
   color: var(--texto-secundario);
 }
 
-/* === ESTILOS DE BOTONES === */
+/* === ESTILOS DE BOTONES MEJORADOS === */
+
 .btn {
+  position: relative;
   padding: 12px 24px;
-  border-radius: 50px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: var(--font-main);
+  border-radius: 50px; 
+  border: 2px solid transparent;
+  font-weight: 600; 
   font-size: 1rem;
+  letter-spacing: 1px; /* Mejorado: espaciado de letras */
+  cursor: pointer;
+  font-family: var(--font-main);
   text-decoration: none;
   display: inline-block;
   text-align: center;
+  overflow: hidden; /* Importante para el efecto de brillo */
+
+  /* Transiciones mejoradas */
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
+/* === BOTÓN VERDE MEJORADO === */
 .btn--green {
   background: var(--boton-verde);
+  border-color: var(--boton-verde);
   color: white;
   box-shadow: 0 4px 15px rgba(63, 185, 80, 0.3);
 }
 
 .btn--green:hover {
   background: #2ea043;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(63, 185, 80, 0.4);
+  border-color: #2ea043;
+  transform: translateY(-3px); /* Más elevación */
+  box-shadow: 0 8px 25px rgba(63, 185, 80, 0.5),
+    /* Sombra principal */ 0 0 30px 5px rgba(63, 185, 80, 0.4); /* Efecto glow */
 }
 
+.btn--green:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(63, 185, 80, 0.3);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+/* === BOTÓN AZUL MEJORADO === */
 .btn--blue {
   background: var(--boton-azul);
+  border-color: var(--boton-azul);
   color: white;
   box-shadow: 0 4px 15px rgba(47, 129, 247, 0.3);
 }
 
 .btn--blue:hover {
   background: #1f6feb;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(47, 129, 247, 0.4);
+  border-color: #1f6feb;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(47, 129, 247, 0.5),
+    /* Sombra principal */ 0 0 30px 5px rgba(47, 129, 247, 0.4); /* Efecto glow */
 }
 
-/* Responsive */
+.btn--blue:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(47, 129, 247, 0.3);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+/* === EFECTO DE BRILLO (SHINE) === */
+.btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 90%; /* Ajustado para border-radius */
+  position: absolute;
+  top: 5%; /* Centrado verticalmente */
+  left: 0%;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.6); /* Brillo más sutil */
+  box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.1);
+  border-radius: inherit; /* Hereda el border-radius */
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+/* Activar animación de brillo al hover */
+.btn:hover::before {
+  -webkit-animation: shineEffect 0.6s 0s ease-out;
+  -moz-animation: shineEffect 0.6s 0s ease-out;
+  animation: shineEffect 0.6s 0s ease-out;
+}
+
+/* === ANIMACIÓN DE BRILLO === */
+@keyframes shineEffect {
+  from {
+    opacity: 0;
+    left: -100%;
+    width: 0px;
+  }
+
+  50% {
+    opacity: 1;
+    width: 30px;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+    width: 0px;
+  }
+}
+
+/* === VARIANTES ADICIONALES === */
+
+/* Botón outline verde */
+.btn--green-outline {
+  background: transparent;
+  border-color: var(--boton-verde);
+  color: var(--boton-verde);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.btn--green-outline:hover {
+  background: var(--boton-verde);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(63, 185, 80, 0.5),
+    0 0 30px 5px rgba(63, 185, 80, 0.4);
+}
+
+/* Botón outline azul */
+.btn--blue-outline {
+  background: transparent;
+  border-color: var(--boton-azul);
+  color: var(--boton-azul);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.btn--blue-outline:hover {
+  background: var(--boton-azul);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(47, 129, 247, 0.5),
+    0 0 30px 5px rgba(47, 129, 247, 0.4);
+}
+
+/* === BOTÓN CON GRADIENTE === */
+.btn--gradient {
+  background: linear-gradient(45deg, var(--boton-verde), var(--boton-azul));
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(63, 185, 80, 0.3);
+}
+
+.btn--gradient:hover {
+  background: linear-gradient(45deg, #2ea043, #1f6feb);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(63, 185, 80, 0.4),
+    0 0 30px 5px rgba(47, 129, 247, 0.3);
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .app-container {
     padding-top: 60px;
@@ -83,5 +211,56 @@ p {
 
   .main-content {
     padding: 1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px); /* Menos movimiento en móvil */
+  }
+}
+
+/* === ANIMACIONES ADICIONALES === */
+
+/* Pulso sutil */
+@keyframes subtlePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.btn--pulse {
+  animation: subtlePulse 2s ease-in-out infinite;
+}
+
+/* Efecto de carga */
+.btn--loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn--loading::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
