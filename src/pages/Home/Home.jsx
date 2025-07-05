@@ -82,7 +82,7 @@ const Home = () => {
                         <div className="about-buttons">
                             <Button
                                 text="Ver Proyectos"
-                                className="btn--green"
+                                className="btn--blue"
                                 onClick={goToProjects}
                             />
                         </div>
