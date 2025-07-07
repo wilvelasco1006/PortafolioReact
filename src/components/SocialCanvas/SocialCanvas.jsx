@@ -82,7 +82,7 @@ const SocialScene = () => {
             <FloatingModel
                 position={[-1.3, 0.8, 0]}
                 hover={hoveredModel === 'twitter'}
-                onClick={() => handleModelClick('https://twitter.com/tu-usuario')}
+                onClick={() => handleModelClick('https://x.com/wilvelasco1006?s=09')}
                 onPointerOver={() => setHoveredModel('twitter')}
                 onPointerOut={() => setHoveredModel(null)}
             >
@@ -93,7 +93,11 @@ const SocialScene = () => {
             <FloatingModel
                 position={[-3, -1, 0]}
                 hover={hoveredModel === 'instagram'}
-                onClick={() => handleModelClick('https://instagram.com/tu-usuario')}
+                onClick={() =>
+                    handleModelClick(
+                        'https://www.instagram.com/wilvelasco1006?igsh=ZHFsOWE4ZWx0cG5l'
+                    )
+                }
                 onPointerOver={() => setHoveredModel('instagram')}
                 onPointerOut={() => setHoveredModel(null)}
             >
@@ -103,7 +107,9 @@ const SocialScene = () => {
             <FloatingModel
                 position={[2, 0, 0]}
                 hover={hoveredModel === 'facebook'}
-                onClick={() => handleModelClick('https://facebook.com/tu-usuario')}
+                onClick={() =>
+                    handleModelClick('https://www.facebook.com/share/1FuZ6YjyhU/')
+                }
                 onPointerOver={() => setHoveredModel('facebook')}
                 onPointerOut={() => setHoveredModel(null)}
             >
@@ -124,7 +130,11 @@ const SocialScene = () => {
             <FloatingModel
                 position={[2, -1.5, 0]}
                 hover={hoveredModel === 'linkedin'}
-                onClick={() => handleModelClick('https://linkedin.com/in/tu-usuario')}
+                onClick={() =>
+                    handleModelClick(
+                        'https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BNnm7596vSWmADk58ovA3dw%3D%3D'
+                    )
+                }
                 onPointerOver={() => setHoveredModel('linkedin')}
                 onPointerOut={() => setHoveredModel(null)}
             >
@@ -135,6 +145,9 @@ const SocialScene = () => {
             <OrbitControls
                 enableZoom={true}
                 enablePan={true}
+                enableRotate={true}
+                maxDistance={20}
+                minDistance={2}
                 maxPolarAngle={Math.PI / 2}
                 minPolarAngle={Math.PI / 2}
                 autoRotate

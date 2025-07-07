@@ -6,7 +6,7 @@ export function ModelGithub(props) {
     'https://res.cloudinary.com/dijh9two4/image/upload/v1751840773/3d_github_logo_rgukja.glb'
   );
   return (
-    <group {...props} dispose={null} scale={0.5}>
+    <group {...props} dispose={null} scale={0.5} rotation={[0, -0.1, 0]} position={[0, 0, -1.9]}>
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group name="root">

@@ -6,7 +6,7 @@ export function ModelLinkedin(props) {
     'https://res.cloudinary.com/dijh9two4/image/upload/v1751841102/linkedin_3d_l8fpyf.glb'
   );
   return (
-    <group {...props} dispose={null} scale={0.5} rotation={[Math.PI / 4, 2, 0]}>
+    <group {...props} dispose={null} scale={1.3} rotation={[0, Math.PI / 8, 0]}>
       <group>
         <group rotation={[-Math.PI / 2, 0, 0]}>
           <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>

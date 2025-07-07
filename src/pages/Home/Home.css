@@ -186,9 +186,9 @@
   grid-template-columns: 1fr 350px; /* CAMBIAR: Reducir ancho derecha */
   gap: 2rem; /* REDUCIR: Menos espacio entre columnas */
   width: 100%;
-  max-width: 100%; /* AÑADIR: Limitar ancho */
+  max-width: 100%; 
   margin: 0 auto;
-  align-items: start; /* ALINEAR arriba */
+  align-items: start; 
   box-sizing: border-box;
 }
 
@@ -197,20 +197,19 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* REDUCIR: gap más pequeño */
+  gap: 1.5rem; 
   box-sizing: border-box;
-  min-width: 0; /* CRUCIAL: Permite que flex shrink funcione */
+  min-width: 0; 
 }
 
 .about-social {
   width: 100%;
-  height: 600px; /* ALTURA FIJA */
+  height: 600px; 
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(22, 27, 34, 0.3); /* FONDO SUTIL */
   border-radius: 15px;
-  border: 1px solid rgba(63, 185, 80, 0.2); /* BORDE VERDE SUTIL */
+  border: 1px solid rgba(63, 185, 79, 0.052); /* BORDE VERDE SUTIL */
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -220,12 +219,12 @@
   font-size: 3.5rem;
   font-weight: bold;
   color: var(--texto-principal);
-  margin-bottom: 0; /* QUITAR margin-bottom */
+  margin-bottom: 0; 
   animation: scaleIn 0.8s ease-out both;
 }
 
 .about-description {
-  margin-bottom: 0; /* QUITAR margin-bottom */
+  margin-bottom: 0; 
   line-height: 1.7;
   color: var(--texto-secundario);
   font-size: 1.1rem;
@@ -234,7 +233,7 @@
 }
 
 .about-commitment {
-  margin-bottom: 0; /* QUITAR margin-bottom */
+  margin-bottom: 0; 
   color: var(--detalles);
   line-height: 1.7;
   font-size: 1.1rem;
@@ -243,103 +242,516 @@
 }
 
 .about-tech {
-  margin: 0; /* QUITAR margin */
+  margin: 0; 
   width: 100%;
 }
 
 .about-buttons {
   display: flex;
   gap: 1rem;
-  margin: 0; /* QUITAR margin */
+  margin: 0; 
 }
 
-/* === RESPONSIVE PARA ABOUT === */
+/* === RESPONSIVe === */
 
-/* Tablets grandes */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1150px) {
   .about-content {
     grid-template-columns: 1fr 300px; /* REDUCIR: columna derecha */
     gap: 2rem;
   }
-
-  .about-social {
-    height: 500px;
-  }
+  /* === SECCIÓN HERO === */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh; /* Altura completa de la pantalla */
+  padding: 2rem 0; /* Padding vertical */
+  gap: 3rem;
 }
 
-/* Tablets medianas */
-@media screen and (max-width: 1080px) {
-  .about-content {
-    grid-template-columns: 1fr 280px; /* REDUCIR MÁS */
-    gap: 1.5rem;
-  }
-
-  .about-social {
-    height: 450px;
-  }
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: left;
+  padding: 2rem;
+}
+.hero-image {
+  flex: 0 0 400px; /* Ancho fijo para la imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.greeting {
+  font-size: 1.4rem;
+  color: var(--detalles);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.6s ease-out;
 }
 
-/* Tablets pequeñas */
-@media screen and (max-width: 900px) {
+.name {
+  font-size: 2rem;
+  color: var(--texto-principal);
+  font-weight: bold;
+  margin: 0.5rem 0;
+  line-height: 1.1;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.role {
+  font-size: 2.1rem;
+  color: var(--texto-principal);
+  margin: 1.5rem 0;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.tech-stack {
+  font-size: 1.2rem;
+  color: var(--detalles);
+  margin-bottom: 2rem;
+  font-style: italic;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--texto-secundario);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.profile-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 4px solid var(--boton-verde);
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(63, 185, 80, 0.3);
+  animation: fadeInRight 1s ease-out 0.5s both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === SECCIÓN ABOUT === */
+.about-section {
+  margin-top: 4rem;
+  padding: 5rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* AÑADIR: Prevenir overflow */
+ 
+}
+
+.about-content {
+  display: grid; /* CAMBIAR de flex a grid */
+  grid-template-columns: 1fr 350px; /* CAMBIAR: Reducir ancho derecha */
+  gap: 2rem; /* REDUCIR: Menos espacio entre columnas */
+  width: 100%;
+  max-width: 100%; 
+  margin: 0 auto;
+  align-items: start; 
+  box-sizing: border-box;
+}
+
+.about-text {
+  width: 90%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+  box-sizing: border-box;
+  min-width: 0; 
+}
+
+.about-social {
+  width: 100%;
+  height: 600px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  border: 1px solid rgba(63, 185, 79, 0.052); /* BORDE VERDE SUTIL */
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--texto-principal);
+  margin-bottom: 0; 
+  animation: scaleIn 0.8s ease-out both;
+}
+
+.about-description {
+  margin-bottom: 0; 
+  line-height: 1.7;
+  color: var(--texto-secundario);
+  font-size: 1.1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.about-commitment {
+  margin-bottom: 0; 
+  color: var(--detalles);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.about-tech {
+  margin: 0; 
+  width: 100%;
+}
+
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 0; 
+}
+
+}
+
+@media screen and (max-width: 1025px) {
   .about-content {
-    grid-template-columns: 1fr; /* UNA SOLA COLUMNA */
+    grid-template-columns: 1fr 250px; /* REDUCIR: columna derecha */
+    gap: 2rem;
+  }
+  /* === SECCIÓN HERO === */
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh; /* Altura completa de la pantalla */
+    padding: 2rem 0; /* Padding vertical */
     gap: 3rem;
+  }
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: left;
+  padding: 1rem;
+}
+.hero-image {
+  flex: 0 0 400px; /* Ancho fijo para la imagen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.greeting {
+  font-size: 1.4rem;
+  color: var(--detalles);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.name {
+  font-size: 1.5rem;
+  color: var(--texto-principal);
+  font-weight: bold;
+  margin: 0.5rem 0;
+  line-height: 1.1;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: var(--texto-principal);
+  margin: 1.5rem 0;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.tech-stack {
+  font-size: 1.1rem;
+  color: var(--detalles);
+  margin-bottom: 2rem;
+  font-style: italic;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--texto-secundario);
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.3rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease-out 1s both;
+  transform: scale(0.85); /* Reduce tamaño en un 10% */
+  transform-origin: left center; /* Punto de origen del escalado */
+}
+
+.profile-image {
+  width: 325px;
+  height: 325px;
+  border-radius: 50%;
+  border: 4px solid var(--boton-verde);
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(63, 185, 80, 0.3);
+  animation: fadeInRight 1s ease-out 0.5s both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === SECCIÓN ABOUT === */
+.about-section {
+  margin-top: 4rem;
+  padding: 5rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; 
+ 
+}
+
+.about-content {
+  display: grid; 
+  grid-template-columns: 1fr 350px; 
+  gap: 2rem; 
+  width: 100%;
+  max-width: 100%; 
+  margin: 0 auto;
+  align-items: start; 
+  box-sizing: border-box;
+}
+
+.about-text {
+  width: 90%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+  box-sizing: border-box;
+  min-width: 0; 
+}
+
+.about-social {
+  width: 100%;
+  height: 600px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  border: 1px solid rgba(63, 185, 79, 0.052); /* BORDE VERDE SUTIL */
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--texto-principal);
+  margin-bottom: 0; 
+  animation: scaleIn 0.8s ease-out both;
+}
+
+.about-description {
+  margin-bottom: 0; 
+  line-height: 1.7;
+  color: var(--texto-secundario);
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.about-commitment {
+  margin-bottom: 0; 
+  color: var(--detalles);
+  line-height: 1.7;
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.about-tech {
+  margin: 0; 
+  width: 100%;
+  transform: scale(0.8); /* Reduce tamaño en un 10% */
+  transform-origin: left center; /* Punto de origen del escalado */
+
+}
+
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  transform: scale(0.85); /* Reduce tamaño en un 15% */
+  transform-origin: left center;
+}
+
+}
+/* === responsive 980 === */
+@media screen and (max-width: 980px) {
+  
+  .hero-section {
+    flex-direction: column-reverse;
+    min-height: auto;
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+  
+  /* Nuevo contenedor superior - Imagen y datos básicos */
+  .hero-top {
+    display: flex;
+    flex-direction: row; /* Elementos en fila */
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-image {
+    flex: 0 0 auto; /* No crecer, no encoger */
+    width: auto;
+    margin: 0;
+  }
+  
+  .profile-image {
+    width: 180px;
+    height: 180px;
+  }
+  
+  /* Contenedor para nombre, rol y saludo */
+  .hero-intro {
+    flex: 1;
+    text-align: left;
+    min-width: 0; /* Importante para evitar overflow */
+    max-width: 100%;
+  }
+  
+  .greeting {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .name {
+    font-size: 1.8rem;
+    margin: 0.3rem 0;
+  }
+  
+  .role {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* Contenedor inferior - Texto largo y botones */
+  .hero-bottom {
+    width: 100%;
     text-align: center;
   }
+  
+  .tech-stack {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+    transform-origin: center;
+  }
 
-  .about-social {
-    height: 400px;
-    max-width: 500px;
-    margin: 0 auto;
+  /* === SECCIÓN ABOUT: CANVAS ARRIBA, TEXTO ABAJO === */
+  .about-section {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .about-text {
+    width: 100%;
+    order: 2; /* Mover texto abajo */
     text-align: center;
+    align-items: center;
+  }
+
+  .about-social {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    order: 1; /* Mover canvas arriba */
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .about-description, 
+  .about-commitment {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  .about-tech {
+    transform-origin: center;
+  }
+
+  .about-buttons {
+    justify-content: center;
+    transform-origin: center;
+  }
+  
+  /* Punto de quiebre para cambiar a columna cuando la pantalla es muy estrecha */
+  @media screen and (max-width: 600px) {
+    .hero-top {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .hero-intro {
+      text-align: center;
+    }
   }
 }
 
-/* Móviles */
+/* Ajustes adicionales para pantallas más pequeñas */
 @media screen and (max-width: 768px) {
-  .about-section {
-    padding: 3rem 1rem;
+  .profile-image {
+    width: 160px;
+    height: 160px;
   }
-
-  .about-content {
-    gap: 2rem;
+  
+  .hero-intro .name {
+    font-size: 1.6rem;
   }
-
+  
+  .hero-intro .role {
+    font-size: 1.2rem;
+  }
+  
   .about-social {
     height: 350px;
   }
-
-  .section-title {
-    font-size: 2.5rem;
-  }
-
-  .about-description,
-  .about-commitment {
-    font-size: 1rem;
-  }
 }
-
-/* Móviles pequeños */
-@media screen and (max-width: 480px) {
-  .about-section {
-    padding: 2rem 0.5rem;
-  }
-
-  .about-social {
-    height: 300px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .about-description,
-  .about-commitment {
-    font-size: 0.9rem;
-  }
-}
-
-/* ...mantener todo el CSS responsivo existente para hero-section... */

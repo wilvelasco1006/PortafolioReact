@@ -11,6 +11,7 @@ export function ModelFacebook(props) {
       dispose={null}
       scale={0.3}
       rotation={[ 2,-Math.PI / 2, 2]}
+      position={[0, 1, 0]}
     >
       <group>
         <group

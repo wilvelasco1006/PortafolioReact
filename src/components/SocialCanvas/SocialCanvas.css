@@ -6,7 +6,7 @@
   align-items: center;
   position: relative;
   padding: 2px;
-  box-sizing: border-box;
+  box-sizing: border-box; 
   max-width: 100%; /* AÑADIR: limitar ancho */
   overflow: hidden; /* AÑADIR: prevenir desbordamiento */
 }
