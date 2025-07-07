@@ -7,16 +7,18 @@
 }
 
 body {
-  background-color: var(--fondo-principal);
+  background: transparent !important; /* CAMBIAR */
   color: var(--texto-principal);
   font-family: var(--font-main);
   line-height: 1.6;
+  overflow-x: hidden; /* Prevenir scroll horizontal */
 }
 
 /* Layout principal */
 .app-container {
   min-height: 100vh;
   padding-top: 60px;
+  background: transparent; /* CAMBIAR */
 }
 
 .main-content {
@@ -24,6 +26,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background: transparent; /* CAMBIAR */
 }
 
 h1,
@@ -41,9 +44,9 @@ p {
 .btn {
   position: relative;
   padding: 12px 24px;
-  border-radius: 50px; 
+  border-radius: 50px;
   border: 2px solid transparent;
-  font-weight: 600; 
+  font-weight: 600;
   font-size: 1rem;
   letter-spacing: 1px; /* Mejorado: espaciado de letras */
   cursor: pointer;
@@ -263,4 +266,23 @@ p {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* === PARTÍCULAS DE FONDO === */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--fondo-principal);
+  pointer-events: none;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  min-height: 100vh;
 }

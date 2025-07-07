@@ -4,34 +4,42 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 60px; /* Altura fija */
   background-color: var(--contenedores-cards);
-  padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--borde-separadores);
   z-index: 1000;
   backdrop-filter: blur(10px);
+  /* MOBILE FIRST */
+  height: auto;
+  min-height: 60px;
+  max-height: 60px;
+  padding: 0.8rem 1rem;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 .navbar-header {
+  width: 100%;
+  height: 44px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
 }
 
-/* Contenedor del logo */
 .logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  height: 100%;
+  height: 44px;
 }
 
 /* Estilos para la imagen del logo */
 .logo-image {
-  height: 35px; /* Ajustar para navbar más delgada */
+  height: 30px; /* Ajustar para navbar más delgada */
   width: auto;
   object-fit: cover;
   border-radius: 4px;
@@ -40,14 +48,14 @@
 /* Texto del logo (opcional como fallback) */
 .logo-text {
   color: var(--color-accent-green);
-  font-size: 1.5rem; /* Más pequeño */
+  font-size: 1.3rem; /* Más pequeño */
   font-weight: bold;
   margin: 0;
 }
 
-/* Ocultar botón hamburguesa en desktop */
+/* MÓVIL: Mostrar botón hamburguesa */
 .mobile-menu-toggle {
-  display: none;
+  display: flex;
   background: none;
   border: none;
   color: var(--texto-principal);
@@ -58,182 +66,146 @@
   width: 40px;
   align-items: center;
   justify-content: center;
+  border-radius: 4px;
 }
 
-/* Enlaces horizontales para desktop */
+/* MÓVIL: Enlaces verticales */
 .navbar-links {
   list-style: none;
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  height: auto;
+  align-items: stretch;
   padding: 0;
-  margin: 0;
-  align-items: center; /* Centrar verticalmente */
 }
 
 .navbar-links li {
-  display: flex;
-  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+/* Cuando el menú está abierto */
+.navbar-open {
+  max-height: 400px;
+}
+
+.navbar-open .navbar-links {
+  opacity: 1;
 }
 
 .link {
   color: var(--color-text-secondary);
   text-decoration: none;
   font-size: 1rem;
-  padding: 0.6rem 1rem; /* Menos padding vertical */
-  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   white-space: nowrap;
   position: relative;
+  width: 100%;
+  min-height: 44px;
+  justify-content: flex-start;
 }
 
-/* Hover sutil - solo texto */
 .link:hover {
+  background-color: rgba(63, 185, 80, 0.1);
   color: var(--color-accent-green);
-  transform: translateY(-1px);
-}
-
-/* Línea inferior animada */
-.link::after {
-  content: '';
-  position: absolute;
-  bottom: 0.3rem;
-  left: 1rem;
-  right: 1rem;
-  height: 2px;
-  background-color: var(--color-accent-green);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.link:hover::after {
-  transform: scaleX(1);
 }
 
 .link.active {
   color: var(--color-accent-green);
+  background-color: rgba(63, 185, 80, 0.1);
 }
 
-.link.active::after {
-  transform: scaleX(1);
-}
-
-/* === RESPONSIVE DESIGN === */
-@media (max-width: 768px) {
+/* === TABLET Y DESKTOP === */
+@media (min-width: 769px) {
   .navbar {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.8rem 1rem;
-    height: auto;
-    min-height: 60px; /* Altura mínima */
-    max-height: 60px; /* Altura inicial colapsada */
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  /* Cuando el menú está abierto */
-  .navbar-open {
-    max-height: 400px; /* Altura cuando se expande */
+    height: 60px;
+    max-height: 60px;
+    padding: 0.5rem 2rem;
+    flex-direction: row;
+    align-items: center;
+    overflow: visible;
   }
 
   .navbar-header {
-    width: 100%;
-    height: 44px; /* Altura fija para el header */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: auto;
+    height: 100%;
   }
 
   .logo {
-    height: 44px; /* Altura igual al header */
+    height: 100%;
   }
 
   .logo-image {
-    height: 30px;
+    height: 35px;
   }
 
   .logo-text {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
-  /* Mostrar botón hamburguesa en móvil */
+  /* Ocultar botón hamburguesa */
   .mobile-menu-toggle {
-    display: flex !important; /* Override del display: none */
-    height: 40px;
-    width: 40px;
-  }
-
-  /* Enlaces verticales en móvil */
-  .navbar-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-    margin-top: 0.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    height: auto;
-    align-items: stretch; /* Elementos ocupan todo el ancho */
-  }
-
-  .navbar-links li {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Mostrar enlaces cuando el menú está abierto */
-  .navbar-open .navbar-links {
-    opacity: 1;
-  }
-
-  .link {
-    padding: 0.8rem 1rem;
-    border-radius: 4px;
-    width: 100%;
-    height: auto;
-    min-height: 44px; /* Altura mínima para facilitar el toque */
-    justify-content: flex-start; /* Alinea texto a la izquierda */
-  }
-
-  .link-button {
-    width: 100%;
-    text-align: left; /* Alinea texto a la izquierda */
-    justify-content: flex-start;
-  }
-
-  /* Hover diferente en móvil */
-  .link:hover {
-    background-color: rgba(63, 185, 80, 0.1);
-    color: var(--color-accent-green);
-    transform: none; /* Sin movimiento en móvil */
-  }
-
-  /* Desactivar el underline en móvil */
-  .link::after {
     display: none;
   }
 
-  /* Mostrar footer en móvil */
-  .navbar-footer {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--borde-separadores);
-    font-size: 0.8rem;
-    color: var(--color-description);
+  /* Enlaces horizontales */
+  .navbar-links {
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 0;
+    opacity: 1;
+    width: auto;
+    align-items: center;
   }
 
-  .contact-title {
-    font-weight: bold;
-    color: var(--color-text-secondary);
-    margin-bottom: 0.3rem;
+  .navbar-links li {
+    width: auto;
+  }
+
+  .link {
+    padding: 0.6rem 1rem;
+    width: auto;
+    min-height: auto;
+    justify-content: center;
+  }
+
+  .link:hover {
+    background: none;
+    transform: translateY(-1px);
+  }
+
+  .link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.3rem;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: var(--color-accent-green);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .link:hover::after,
+  .link.active::after {
+    transform: scaleX(1);
+  }
+
+  .link.active {
+    background: none;
   }
 }
 
-/* Para pantallas muy pequeñas */
+/* Pantallas muy pequeñas */
 @media (max-width: 480px) {
   .navbar {
     padding: 0.6rem 0.8rem;

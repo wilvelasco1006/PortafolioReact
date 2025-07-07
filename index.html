@@ -1,13 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Portfolio | Wilmer</title>
   </head>
   <body>
+    <div id="particles-js"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+      particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 100 /* REDUCIR para mejor rendimiento */,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: ['#3fb950', '#2f81f7', '#4db8b6'] /* Colores de tu tema */,
+          },
+          shape: {
+            type: ['circle', 'triangle'] /* Formas variadas */,
+            stroke: {
+              width: 0,
+              color: '#000000',
+            },
+            polygon: {
+              nb_sides: 6,
+            },
+          },
+          opacity: {
+            value: 2 ,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 5 /* TAMAÑO MÁS PEQUEÑO */,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 120 /* LÍNEAS MÁS CORTAS */,
+            color: '#3fb950',
+            opacity: 0.2 /* MÁS TRANSPARENTES */,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 1.5 /* MÁS LENTO */,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out',
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: 'window',
+          events: {
+            onhover: {
+              enable: true,
+              mode: 'grab' /* CAMBIAR a grab */,
+            },
+            onclick: {
+              enable: true,
+              mode: 'push',
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 100 /* DISTANCIA CORTA */,
+              line_linked: {
+                opacity: 0.5,
+              },
+            },
+            bubble: {
+              distance: 200,
+              size: 8,
+              duration: 2,
+              opacity: 0.6,
+              speed: 3,
+            },
+            repulse: {
+              distance: 100,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 2 /* MENOS PARTÍCULAS */,
+            },
+            remove: {
+              particles_nb: 1,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
   </body>
 </html>

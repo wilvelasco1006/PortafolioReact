@@ -1,8 +1,10 @@
 .home-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100vw; /* CAMBIAR: Limitar al viewport */
   margin: 0 auto;
-  padding: 0 1rem; /* Añadir padding lateral */
+  padding: 0 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden; /* AÑADIR: Eliminar scroll horizontal */
 }
 /* === ANIMACIONES EXPLICADAS === */
 
@@ -93,10 +95,10 @@
 
 .hero-content {
   flex: 1;
-  min-width: 300px; /* Reducir para móviles */
-  max-width: 600px; /* Limitar ancho máximo */
+  min-width: 300px;
+  max-width: 600px;
   text-align: left;
-  padding: 2rem; /* Reducir padding */
+  padding: 2rem;
 }
 .hero-image {
   flex: 0 0 400px; /* Ancho fijo para la imagen */
@@ -112,7 +114,7 @@
 }
 
 .name {
-  font-size: 4rem; /* Aumentar de 3rem a 4rem */
+  font-size: 4rem;
   color: var(--texto-principal);
   font-weight: bold;
   margin: 0.5rem 0;
@@ -146,7 +148,7 @@
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
-  flex-wrap: wrap; /* Para responsive */
+  flex-wrap: wrap;
   animation: fadeInUp 0.8s ease-out 1s both;
 }
 
@@ -172,621 +174,172 @@
   padding: 5rem 2rem;
   border-radius: 15px;
   margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* AÑADIR: Prevenir overflow */
+ 
 }
 
 .about-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 4rem;
-  max-width: 1000px;
+  display: grid; /* CAMBIAR de flex a grid */
+  grid-template-columns: 1fr 350px; /* CAMBIAR: Reducir ancho derecha */
+  gap: 2rem; /* REDUCIR: Menos espacio entre columnas */
+  width: 100%;
+  max-width: 100%; /* AÑADIR: Limitar ancho */
   margin: 0 auto;
+  align-items: start; /* ALINEAR arriba */
+  box-sizing: border-box;
 }
 
 .about-text {
-  flex: 1;
-  max-width: 550px;
-  min-width: 300px;
-  align-items: flex-start;
+  width: 90%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* REDUCIR: gap más pequeño */
+  box-sizing: border-box;
+  min-width: 0; /* CRUCIAL: Permite que flex shrink funcione */
+}
+
+.about-social {
+  width: 100%;
+  height: 600px; /* ALTURA FIJA */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(22, 27, 34, 0.3); /* FONDO SUTIL */
+  border-radius: 15px;
+  border: 1px solid rgba(63, 185, 80, 0.2); /* BORDE VERDE SUTIL */
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .section-title {
   font-size: 3.5rem;
   font-weight: bold;
   color: var(--texto-principal);
-  margin-bottom: 2rem;
+  margin-bottom: 0; /* QUITAR margin-bottom */
   animation: scaleIn 0.8s ease-out both;
 }
 
 .about-description {
-  margin-bottom: 2.5rem;
+  margin-bottom: 0; /* QUITAR margin-bottom */
   line-height: 1.7;
   color: var(--texto-secundario);
-  font-size: 1.1rem; /* Aumentar tamaño */
+  font-size: 1.1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .about-commitment {
-  margin-bottom: 2.5rem;
+  margin-bottom: 0; /* QUITAR margin-bottom */
   color: var(--detalles);
   line-height: 1.7;
-  font-size: 1.1rem; /* Aumentar tamaño */
+  font-size: 1.1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.about-tech {
+  margin: 0; /* QUITAR margin */
+  width: 100%;
 }
 
 .about-buttons {
   display: flex;
   gap: 1rem;
+  margin: 0; /* QUITAR margin */
 }
 
-/* === ESTILOS PARA BOTONES === */
-.btn-outline {
-  padding: 0.8rem 1.6rem; /* Botones más grandes */
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  border: 2px solid var(--boton-verde);
-  color: var(--boton-verde);
-  background-color: transparent;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-align: center;
-  font-size: 1rem;
-}
+/* === RESPONSIVE PARA ABOUT === */
 
-.btn-outline:hover {
-  background-color: var(--boton-verde);
-  color: #000;
-  transform: translateY(-2px);
-}
-
-/* === RESPONSIVE DESIGN === */
-
-/* Desktop grande (1200px+) */
-@media (min-width: 1200px) {
-  .hero-section {
-    gap: 5rem;
+/* Tablets grandes */
+@media screen and (max-width: 1200px) {
+  .about-content {
+    grid-template-columns: 1fr 300px; /* REDUCIR: columna derecha */
+    gap: 2rem;
   }
 
-  .name {
-    font-size: 4.5rem;
+  .about-social {
+    height: 500px;
   }
 }
 
-/* Desktop estándar (900px - 1199px) */
-@media (max-width: 1199px) and (min-width: 900px) {
-  .hero-section {
-    gap: 4rem;
+/* Tablets medianas */
+@media screen and (max-width: 1080px) {
+  .about-content {
+    grid-template-columns: 1fr 280px; /* REDUCIR MÁS */
+    gap: 1.5rem;
   }
 
-  .name {
-    font-size: 4rem;
-  }
-
-  .role {
-    font-size: 2.5rem;
+  .about-social {
+    height: 450px;
   }
 }
 
-/* Tablets y pantallas medianas (700px - 899px) */
-@media (max-width: 899px) and (min-width: 700px) {
-  .hero-section {
+/* Tablets pequeñas */
+@media screen and (max-width: 900px) {
+  .about-content {
+    grid-template-columns: 1fr; /* UNA SOLA COLUMNA */
     gap: 3rem;
-    padding: 3rem 0;
-  }
-
-  .hero-image {
-    flex: 0 0 320px;
-  }
-
-  .profile-image {
-    width: 320px;
-    height: 320px;
-  }
-
-  .name {
-    font-size: 3.5rem;
-  }
-
-  .role {
-    font-size: 2.2rem;
-  }
-
-  .description {
-    font-size: 1.1rem;
-  }
-}
-
-/* Tablets pequeñas y móviles grandes (500px - 699px) */
-@media (max-width: 699px) and (min-width: 500px) {
-  .home-container {
-    padding: 0 1rem;
-  }
-
-  .hero-section {
-    min-height: calc(100vh - 80px);
-    padding: 2rem 0;
-    gap: 2.5rem;
-    margin-top: 80px;
-    flex-direction: column;
     text-align: center;
   }
 
-  .hero-content {
-    padding: 0;
-    max-width: 100%;
-    min-width: auto;
-    order: 2;
+  .about-social {
+    height: 400px;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
-  .hero-image {
-    order: 1;
-    margin-bottom: 1rem;
+  .about-text {
+    text-align: center;
   }
+}
 
-  .greeting {
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .name {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin: 0.5rem 0;
-  }
-
-  .role {
-    font-size: 2.2rem;
-    margin: 1rem 0;
-  }
-
-  .tech-stack {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .description {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    padding: 0 1rem;
-  }
-
-  .profile-image {
-    width: 280px;
-    height: 280px;
-    border-width: 4px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    padding: 0 1rem;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: 350px;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-
-  /* About section */
+/* Móviles */
+@media screen and (max-width: 768px) {
   .about-section {
-    margin-top: 4rem;
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
   }
 
   .about-content {
     gap: 2rem;
-    text-align: center;
-    flex-direction: column;
+  }
+
+  .about-social {
+    height: 350px;
   }
 
   .section-title {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
   }
 
   .about-description,
   .about-commitment {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    font-size: 1rem;
   }
 }
 
-/* Móviles estándar (350px - 499px) - Texto que se acomoda */
-@media (max-width: 499px) and (min-width: 350px) {
-  .home-container {
-    padding: 0 0.8rem;
-    width: 100%; /* Asegurar ancho completo */
-    overflow-x: hidden; /* Prevenir scroll horizontal */
-  }
-
-  .hero-section {
-    min-height: calc(100vh - 70px);
-    padding: 1.5rem 0;
-    gap: 1rem;
-    margin-top: 70px;
-    display: grid;
-    grid-template-areas:
-      'greeting'
-      'name'
-      'image'
-      'role'
-      'tech'
-      'description'
-      'buttons';
-    grid-template-rows: auto auto auto auto auto auto auto;
-    justify-items: start;
-    text-align: left;
-    width: 100%; /* Ancho completo */
-  }
-
-  .hero-content {
-    display: contents;
-    width: 100%; /* Ancho completo */
-  }
-
-  .hero-image {
-    display: contents;
-  }
-
-  /* === AJUSTAR CADA ELEMENTO PARA QUE EL TEXTO FLUYA === */
-
-  .greeting {
-    grid-area: greeting;
-    font-size: 1.2rem;
-    margin: 0 0 0.5rem 0;
-    justify-self: start;
-    width: 100%; /* CLAVE: Ancho completo */
-    max-width: 100%; /* No exceder el contenedor */
-    word-wrap: break-word; /* Romper palabras largas */
-    overflow-wrap: break-word; /* Compatibilidad */
-  }
-
-  .name {
-    grid-area: name;
-    font-size: 2.2rem; /* Reducir ligeramente */
-    line-height: 1.2; /* Más espacio entre líneas */
-    margin: 0 0 1rem 0;
-    justify-self: start;
-    width: 100%;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto; /* Guiones automáticos */
-  }
-
-  .profile-image {
-    grid-area: image;
-    width: 180px; /* Más pequeña para dar más espacio al texto */
-    height: 180px;
-    border-width: 3px;
-    margin: 1rem 0;
-    justify-self: start;
-  }
-
-  .role {
-    grid-area: role;
-    font-size: 1.6rem; /* Reducir para que quepa */
-    line-height: 1.3;
-    margin: 0 0 0.8rem 0;
-    justify-self: start;
-    width: 100%;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .tech-stack {
-    grid-area: tech;
-    font-size: 0.95rem; /* Ligeramente más pequeño */
-    line-height: 1.4;
-    margin: 0 0 1.5rem 0;
-    justify-self: start;
-    width: 100%;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .description {
-    grid-area: description;
-    font-size: 0.9rem; /* Más pequeño para que quepa */
-    line-height: 1.5; /* Buen espaciado */
-    margin: 0 0 1.8rem 0;
-    justify-self: start;
-    width: 100%;
-    max-width: 100%;
-    word-wrap: break-word; /* CLAVE: Permitir que las palabras se rompan */
-    overflow-wrap: break-word;
-    hyphens: auto; /* Guiones para palabras largas */
-    text-align: justify; /* Justificar texto para mejor apariencia */
-  }
-
-  .hero-buttons {
-    grid-area: buttons;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; /* CLAVE: Permitir que los botones se envuelvan */
-    gap: 0.8rem;
-    margin: 0;
-    justify-self: start;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero-buttons .btn {
-    flex: 1 1 auto; /* Botones flexibles */
-    min-width: 120px; /* Mínimo más pequeño */
-    max-width: 150px;
-    padding: 0.8rem 1rem; /* Padding más compacto */
-    font-size: 0.85rem;
-    text-align: center;
-    white-space: nowrap; /* No romper texto del botón */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Puntos suspensivos si es necesario */
-  }
-
-  /* === ABOUT SECTION === */
+/* Móviles pequeños */
+@media screen and (max-width: 480px) {
   .about-section {
-    margin-top: 3rem;
-    padding: 2.5rem 1rem;
-    width: 100%;
+    padding: 2rem 0.5rem;
   }
 
-  .about-content {
-    gap: 1.5rem;
-    text-align: center;
-    flex-direction: column;
-    width: 100%;
+  .about-social {
+    height: 300px;
   }
 
   .section-title {
-    font-size: 1.8rem; /* Más pequeño */
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    font-size: 2rem;
   }
 
   .about-description,
   .about-commitment {
     font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    width: 100%;
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    text-align: justify;
-  }
-
-  .about-buttons {
-    justify-content: left;
-  }
-
-  .about-buttons .btn {
-    min-width: 180px; /* Más pequeño */
-    max-width: 200px;
-    padding: 0.9rem 1.2rem;
-    font-size: 0.85rem;
   }
 }
 
-/* Móviles pequeños (menos de 350px) */
-@media (max-width: 349px) {
-  .home-container {
-    padding: 0 0.5rem;
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .hero-section {
-    min-height: calc(100vh - 60px);
-    padding: 1rem 0;
-    gap: 1rem;
-    margin-top: 60px;
-    flex-direction: column;
-    text-align: left; /* Cambiar a left para mejor legibilidad */
-    width: 100%;
-  }
-
-  .hero-content {
-    padding: 0;
-    order: 2;
-    width: 100%;
-  }
-
-  .hero-image {
-    order: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .greeting {
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .name {
-    font-size: 1.8rem; /* Más pequeño */
-    line-height: 1.2;
-    margin: 0.3rem 0;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .role {
-    font-size: 1.3rem;
-    line-height: 1.3;
-    margin: 0.5rem 0;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .tech-stack {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin-bottom: 1rem;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .description {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    padding: 0;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    text-align: justify;
-  }
-
-  .profile-image {
-    width: 150px; /* Más pequeña */
-    height: 150px;
-    border-width: 2px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch; /* Botones ocupan ancho completo */
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: none; /* Sin límite de ancho */
-    padding: 0.8rem 1rem;
-    font-size: 0.8rem;
-  }
-
-  /* About section */
-  .about-section {
-    margin-top: 2rem;
-    padding: 2rem 0.5rem;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .about-description,
-  .about-commitment {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    text-align: justify;
-  }
-}
-
-/* Landscape en móviles */
-@media (max-width: 800px) and (orientation: landscape) and (max-height: 500px) {
-  .hero-section {
-    min-height: calc(100vh - 50px);
-    flex-direction: row;
-    gap: 2rem;
-    padding: 1rem 0;
-    margin-top: 50px;
-  }
-
-  .hero-content {
-    text-align: left;
-    order: 1;
-    flex: 1;
-  }
-
-  .hero-image {
-    order: 2;
-    flex: 0 0 180px;
-  }
-
-  .profile-image {
-    width: 160px;
-    height: 160px;
-  }
-
-  .name {
-    font-size: 2rem;
-  }
-
-  .role {
-    font-size: 1.4rem;
-  }
-
-  .description {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-
-  .hero-buttons {
-    flex-direction: row;
-    gap: 0.5rem;
-    justify-content: flex-start;
-  }
-
-  .hero-buttons .btn {
-    width: auto;
-    max-width: 140px;
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-  }
-}
-
-/* Optimizaciones generales para móviles */
-@media (max-width: 699px) {
-  /* Animaciones más rápidas */
-  .greeting,
-  .name,
-  .role,
-  .tech-stack,
-  .description,
-  .hero-buttons,
-  .profile-image {
-    animation-duration: 0.4s;
-  }
-
-  /* Touch targets */
-  .btn,
-  button,
-  a {
-    min-height: 44px;
-    touch-action: manipulation;
-  }
-
-  /* Scroll suave */
-  html {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Legibilidad */
-  body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-}
+/* ...mantener todo el CSS responsivo existente para hero-section... */

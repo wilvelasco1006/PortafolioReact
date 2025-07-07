@@ -1,0 +1,148 @@
+.social-canvas-container {
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 2px;
+  box-sizing: border-box;
+  max-width: 100%; /* AÑADIR: limitar ancho */
+  overflow: hidden; /* AÑADIR: prevenir desbordamiento */
+}
+
+.canvas-header {
+  text-align: center; /* CAMBIAR a center */
+  margin-bottom: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.canvas-header h3 {
+  font-size: 1.8rem;
+  color: var(--texto-principal);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    var(--boton-verde),
+    var(--boton-azul)
+  ); /* AÑADIR gradiente */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.canvas-header p {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  opacity: 0.8;
+}
+
+.social-canvas {
+  width: 100%;
+  height: 400px;
+  background: transparent !important;
+  cursor: grab;
+  border-radius: 10px;
+  box-sizing: border-box;
+  max-width: 100%; /* AÑADIR: limitar ancho */
+}
+
+.social-canvas:active {
+  cursor: grabbing;
+}
+
+.canvas-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; /* CAMBIAR a center */
+  color: var(--texto-secundario);
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--borde-separadores);
+  border-top: 3px solid var(--boton-verde);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+  .social-canvas {
+    height: 350px;
+  }
+
+  .canvas-header h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .social-canvas-container {
+    padding: 2rem 1rem;
+  }
+
+  .social-canvas {
+    height: 300px;
+  }
+
+  .canvas-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .canvas-header p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-canvas {
+    height: 280px;
+  }
+
+  .canvas-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .canvas-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .canvas-header p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-canvas-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .social-canvas {
+    height: 250px;
+  }
+
+  .canvas-header {
+    margin-bottom: 1rem;
+  }
+
+  .canvas-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .canvas-header p {
+    font-size: 0.75rem;
+  }
+}

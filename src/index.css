@@ -66,3 +66,27 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* === PARTÍCULAS DE FONDO === */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* CRUCIAL: Por detrás del contenido */
+  background: var(--fondo-principal);
+  pointer-events: none; /* No interfiere con clicks */
+}
+
+/* Asegurar que el contenido esté por encima */
+#root {
+  position: relative;
+  z-index: 1;
+  background: transparent; /* Transparente para ver las partículas */
+}
+
+/* Body transparente para ver partículas */
+body {
+  background: transparent !important;
+}
