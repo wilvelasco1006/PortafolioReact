@@ -8,16 +8,18 @@ const Store = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isExtraSmall, setIsExtraSmall] = useState(false);
 
   // Detectar si es móvil
   useEffect(() => {
-    const checkMobile = () => {
+    const checkScreenSize = () => {
       setIsMobile(window.innerWidth <= 767);
+      setIsExtraSmall(window.innerWidth <= 400);
     };
 
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   // Cargar carrito del localStorage al iniciar
@@ -180,7 +182,9 @@ const Store = () => {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
 
-  // Actualizar solo la sección de renderizado
+  // Actualizar la sección de renderizado para móviles pequeños
+
+  // MODIFICAR el return para manejar dispositivos muy pequeños
   return (
     <div className="store container-fluid p-0">
       <div className="store-header row justify-content-center">
@@ -216,8 +220,67 @@ const Store = () => {
                 </div>
               ))}
             </div>
+          ) : isExtraSmall ? (
+            // MÓVILES MUY PEQUEÑOS - CARRUSEL CON TARJETA ÚNICA Y FLECHAS
+            <div className="store-services">
+              <div className="services-container">
+                {services.map((service, index) => (
+                  <div
+                    className={`service-card-wrapper ${
+                      index === currentSlide ? 'active' : ''
+                    }`}
+                    key={service.id}
+                  >
+                    <StoreCard
+                      image={service.image}
+                      title={service.title}
+                      description={service.description}
+                      price={service.price}
+                      originalPrice={service.originalPrice}
+                      category={service.category}
+                      features={service.features}
+                      onAddToCart={handleAddToCart}
+                      isPopular={service.isPopular}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Dots para navegación móvil */}
+              <div className="mobile-dots">
+                {services.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`mobile-dot ${
+                      index === currentSlide ? 'active' : ''
+                    }`}
+                    onClick={() => goToSlide(index)}
+                  />
+                ))}
+              </div>
+
+              {/* Flechas para navegación móvil */}
+              <div className="mobile-nav">
+                <button
+                  className="mobile-arrow"
+                  onClick={prevSlide}
+                  disabled={currentSlide === 0}
+                  aria-label="Anterior"
+                >
+                  ←
+                </button>
+                <button
+                  className="mobile-arrow"
+                  onClick={nextSlide}
+                  disabled={currentSlide === services.length - 1}
+                  aria-label="Siguiente"
+                >
+                  →
+                </button>
+              </div>
+            </div>
           ) : (
-            // MÓVIL/TABLET - CARRUSEL
+            // TABLETS Y MÓVILES ESTÁNDAR - CARRUSEL HORIZONTAL
             <div className="store-services">
               <div
                 className="services-container"

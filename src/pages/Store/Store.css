@@ -129,6 +129,100 @@
   }
 }
 
+/* === MÓVILES MUY PEQUEÑOS (max-width: 400px) === */
+@media (max-width: 400px) {
+  /* Cambiar a carrusel de tarjeta única con flechas */
+  .services-container {
+    overflow: hidden;
+    display: block;
+    padding: 1rem 0;
+    position: relative;
+  }
+
+  .service-card-wrapper {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 280px;
+  }
+
+  .service-card-wrapper.active {
+    display: flex;
+    animation: fadeCard 0.3s ease-in-out forwards;
+  }
+
+  /* Eliminar indicador de scroll */
+  .store-services::after {
+    display: none;
+  }
+
+  /* Flechas de navegación */
+  .mobile-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .mobile-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .mobile-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--texto-secundario);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-dot.active {
+    background-color: var(--boton-azul);
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  .mobile-arrow {
+    background: var(--boton-azul);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(47, 129, 247, 0.3);
+  }
+
+  .mobile-arrow:disabled {
+    background: var(--texto-secundario);
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  @keyframes fadeCard {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
 /* === TABLETS (min-width: 768px) === */
 @media (min-width: 768px) {
   .store {
