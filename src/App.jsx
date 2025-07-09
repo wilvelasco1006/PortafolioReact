@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import Resume from './pages/Resume/Resume';
 import Projects from './pages/Projects/Projects';
 import Store from './pages/Store/Store';
+import Contact from './pages/Contact/Contact';
 import './App.css';
 // Solo importa las partes de Bootstrap que necesitas
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
@@ -29,6 +30,7 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
