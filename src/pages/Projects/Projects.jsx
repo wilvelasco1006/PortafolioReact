@@ -8,7 +8,8 @@ const Projects = () => {
         {
             id: 1,
             title: 'Eye Care',
-            image: 'src/assets/proyects/project-eyecare.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047915/project-eyecare_kskiij.png',
             description:
                 'EyeCare es un sitio web 3D sobre enfermedades oculares con visualizaciones 3D interactivas. Desarrollada con React, Three.js y un backend en Express.',
             githubUrl: 'https://github.com/wilvelasco1006/EyeCare',
@@ -17,7 +18,8 @@ const Projects = () => {
         {
             id: 2,
             title: 'SCSM - Sistema de Registro',
-            image: 'src/assets/proyects/project-scsm.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047917/project-scsm_e9kjdy.png',
             description:
                 'Salvajina Cafe Software Manager(SCSM) es un aplicativo web para el registro detallado de procesos productivos de una empresa productora de café. Desarrollada en Django, PostgreSQL y Bootstrap.',
             githubUrl: 'https://github.com/wilvelasco1006/Proyecto_SCSM',
@@ -25,7 +27,8 @@ const Projects = () => {
         {
             id: 3,
             title: 'Beatrix-Statistics',
-            image: 'src/assets/proyects/project-beatrix.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047914/project-beatrix_ih0smz.png',
             description:
                 'Beatrix Statistics es un paquete estadístico en Python para procesar y visualizar datos meteorológicos a partir de archivos CSV. Incluye una interfaz gráfica para visualización de datos y gráficos estadísticos.',
             githubUrl: 'https://github.com/wilvelasco1006/BeatrixV2.0',
@@ -33,7 +36,8 @@ const Projects = () => {
         {
             id: 4,
             title: 'Aretes Cordelia',
-            image: 'src/assets/proyects/project-cordelia.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047920/project-cordelia_yedxdn.png',
             description:
                 'Aretes Cordelia es una página web básica para la venta de aretes de estilos variados. Se emplea HTML, CSS y Javascript.',
             githubUrl: 'https://github.com/wilvelasco1006/page-web-cordelia.git',
@@ -42,7 +46,8 @@ const Projects = () => {
         {
             id: 5,
             title: 'Proyecto Salud',
-            image: 'src/assets/proyects/project-salud.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047915/project-salud_rmdfef.png',
             description:
                 'El Proyecto Salud es una base de datos relacional diseñada en PostgreSQL para gestionar información sobre pacientes y procesos médicos.',
             githubUrl: 'https://github.com/wilvelasco1006/Proyecto-salud',
@@ -50,7 +55,8 @@ const Projects = () => {
         {
             id: 6,
             title: 'Alinventario',
-            image: 'src/assets/proyects/project-alinventario.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047915/project-alinventario_dshub6.png',
             description:
                 'Alinventario es un programa básico en consola desarrollada en C++ para gestionar inventarios, registrar compras y ventas, y llevar un historial detallado de los movimientos de productos.',
             githubUrl: 'https://github.com/wilvelasco1006/Alinventario.git',
@@ -58,7 +64,8 @@ const Projects = () => {
         {
             id: 7,
             title: 'EL Rincon de la empanada',
-            image: 'src/assets/proyects/project-empanada.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047915/project-empanada_abjtep.png',
             description:
                 'Este proyecto es una aplicación de escritorio desarrollada en Python con tkinter para gestionar pedidos de un restaurante ficticio llamado "El Rincón de la Empanada".',
             githubUrl:
@@ -67,7 +74,8 @@ const Projects = () => {
         {
             id: 8,
             title: 'Gastos Familiares',
-            image: 'src/assets/proyects/project-gastos.png',
+            image:
+                'https://res.cloudinary.com/dijh9two4/image/upload/v1752047915/project-gastos_fd57qa.png',
             description:
                 'Este proyecto es un programa desarrollado en Python con una interfaz de tkinter para gestionar los gastos familiares de un problema específico, implementando matrices.',
             githubUrl: 'https://github.com/wilvelasco1006/gastos-familiares.git',
