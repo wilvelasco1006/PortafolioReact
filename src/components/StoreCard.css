@@ -14,8 +14,8 @@
 }
 
 .store-card:hover {
-  transform: translateY(-5px); /* Reducido de -8px */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(22px); /* Reducido de -8px */
+  box-shadow: 0 8px 25px rgba(13, 32, 240, 0.248);
 }
 
 .store-card--popular {
@@ -89,7 +89,7 @@
   margin-bottom: 0.8rem; /* Reducido */
   /* Limitar a 3 líneas con ellipsis */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -133,8 +133,14 @@
 }
 
 .original-price {
-  font-size: 0.8rem; /* Reducido */
+  font-size: 0.8rem;
+  color: #ff5252; /* Color rojo para destacar el precio que ya no aplica */
+  margin-left: 0.5rem;
+  text-decoration: line-through;
+  position: relative;
+  display: inline-block;
 }
+
 
 .store-card-button {
   background: var(--boton-azul);

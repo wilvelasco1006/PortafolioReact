@@ -4,6 +4,7 @@ import TechCarousel from '../../components/TechCarousel';
 import SocialCanvas from '../../components/SocialCanvas/SocialCanvas';
 import perfilImg from '../../assets/my-avatar-wil.jpg';
 import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const Home = () => {
             contribuir a proyectos innovadores que generen un impacto positivo.
           </p>
 
-          <div className="hero-buttons">
+          <div className="hero-buttons" data-aos="fade-right">
             <Button
               text="Conoce Más!"
               className="btn--green"
@@ -64,15 +65,26 @@ const Home = () => {
         <div className="about-content">
           {/* COLUMNA IZQUIERDA - Texto */}
           <div className="about-text">
-            <h2 className="section-title">Acerca de Mí</h2>
-            <p className="about-description">
-              Soy Tecnólogo en Desarrollo de Software, actualmente en proceso de
-              formación, con conocimientos sólidos en Desarrollo Back-end,
-              Front-end y Bases de Datos. Tengo experiencia aplicando conceptos
-              como la programación orientada a objetos, diseño MVC, maquetación
-              web, uso de frameworks, modelado de datos y control de versiones.
+            <h2 className="section-title" data-aos="fade-up">
+              Acerca de Mí
+            </h2>
+            <p className="about-description" data-aos="fade-right">
+              Soy Tecnólogo en Desarrollo de Software en formación, con una
+              sólida base en programación orientada a objetos y experiencia
+              práctica en el desarrollo de aplicaciones web. He trabajado con
+              tecnologías como Python, Java, Django, React, PostgreSQL y
+              herramientas de control de versiones como Git y GitHub. Me
+              caracterizo por ser autodidacta, responsable y comprometido con la
+              calidad del trabajo. Disfruto enfrentar nuevos retos técnicos y
+              siempre busco mejorar mis habilidades a través del aprendizaje
+              continuo y la investigación. He desarrollado proyectos reales de
+              manera individual y en equipo, aplicando buenas prácticas de
+              desarrollo y enfocándome en soluciones funcionales y escalables.
+              Mi objetivo es seguir creciendo como desarrollador full-stack, con
+              especial interés en el desarrollo backend, y contribuir a
+              proyectos que generen un impacto positivo.
             </p>
-            <p className="about-commitment">
+            <p className="about-commitment" data-aos="fade-left">
               Comprometido con el aprendizaje constante, la mejora continua y la
               entrega de soluciones tecnológicas de valor.
             </p>
@@ -90,7 +102,7 @@ const Home = () => {
           </div>
 
           {/* COLUMNA DERECHA - Canvas 3D */}
-          <div className="about-social">
+          <div className="about-social" data-aos="fade-left">
             <SocialCanvas />
           </div>
         </div>

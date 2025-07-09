@@ -132,7 +132,7 @@ const SocialScene = () => {
                 hover={hoveredModel === 'linkedin'}
                 onClick={() =>
                     handleModelClick(
-                        'https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BNnm7596vSWmADk58ovA3dw%3D%3D'
+                        'https://www.linkedin.com/in/wilmer-yulian-ulcue-velasco/'
                     )
                 }
                 onPointerOver={() => setHoveredModel('linkedin')}

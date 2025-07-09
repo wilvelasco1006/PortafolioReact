@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 2rem 1rem;
   color: var(--texto-principal);
-  background-color: var(--fondo-principal);
+  
   min-height: calc(100vh - 70px); /* Ajustar para el navbar */
   margin-top: 70px;
 }

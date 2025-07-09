@@ -188,9 +188,9 @@ const Store = () => {
   return (
     <div className="store container-fluid p-0">
       <div className="store-header row justify-content-center">
-        <div className="col-12 col-md-10 col-lg-8">
+        <div className="col-12 col-md-10 col-lg-8" data-aos="fade-up">
           <h1 className="store-title">Tienda Digital</h1>
-          <p className="store-description">
+          <p className="store-description" data-aos="flip-up">
             ¡Bienvenido a mi tienda digital! Aquí encontrarás servicios de
             desarrollo web profesionales diseñados para hacer crecer tu negocio
             en línea.
@@ -204,7 +204,7 @@ const Store = () => {
             // DESKTOP - GRID DE 4 COLUMNAS
             <div className="row g-4 mx-0 px-3">
               {services.map(service => (
-                <div className="col-md-6 col-lg-3 mb-4" key={service.id}>
+                <div className="col-md-6 col-lg-3 mb-4" key={service.id} >
                   <StoreCard
                     image={service.image}
                     title={service.title}

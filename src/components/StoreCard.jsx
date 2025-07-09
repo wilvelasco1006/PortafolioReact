@@ -32,6 +32,7 @@ const StoreCard = ({
         <div
             className={`store-card ${isPopular ? 'store-card--popular' : ''
                 } ${className}`}
+            data-aos="fade-left"
         >
             {isPopular && <div className="popular-badge">Popular</div>}
 

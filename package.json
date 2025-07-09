@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^10.4.4",
     "@react-three/fiber": "^9.2.0",
+    "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.3.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

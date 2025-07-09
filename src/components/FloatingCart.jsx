@@ -12,13 +12,12 @@ const FloatingCart = ({
 }) => {
   const handleCheckout = () => {
     if (cart.length === 0) return;
-    
-    // Aquí puedes integrar con un servicio de pago real
+  
     const message = `¡Hola! Me interesa contratar los siguientes servicios:\n\n${cart.map(item => 
       `• ${item.title} - $${item.price} x${item.quantity}`
     ).join('\n')}\n\nTotal: $${totalPrice.toFixed(2)}`;
     
-    const whatsappUrl = `https://wa.me/TU_NUMERO?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/3164022076?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
