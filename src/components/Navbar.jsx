@@ -79,7 +79,7 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        <li>
+        {/* <li>
           <NavLink
             to="/store"
             className="link"
@@ -87,7 +87,7 @@ const Navbar = () => {
           >
             Store
           </NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

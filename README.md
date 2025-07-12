@@ -16,7 +16,7 @@
 
 Portafolio profesional desarrollado con **React** y **Vite**, destacando proyectos, habilidades y experiencia laboral. Incluye animaciones fluidas, modelos 3D interactivos y un diseño totalmente responsive.
 
-### 🔗 [Ver Demo](https://portafolio-wilmer.onrender.com/)
+### 🔗 [Ver Demo](https://wilvelasco.me/)
 
 ---
 
@@ -64,6 +64,7 @@ Portafolio profesional desarrollado con **React** y **Vite**, destacando proyect
 ---
 
 ## 📂 Estructura del Proyecto
+
 ```
 src/
 ├── assets/ # Imágenes y recursos
@@ -97,7 +98,7 @@ src/
 ### 🛞 Carrusel de Tecnologías
 
 - Scroll infinito
-- Iconos SVG 
+- Iconos SVG
 - Colores personalizados por tecnología
 
 ---
@@ -120,14 +121,15 @@ npm run dev
 # Compilar para producción
 npm run build
 ```
+
 ## 📝 Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
-## 👤  Autor 
+## 👤 Autor
 
-- *Wilmer Yulian Ulcue Velasco* - [wilvelasco1006](https://github.com/wilvelasco1006)
+- _Wilmer Yulian Ulcue Velasco_ - [wilvelasco1006](https://github.com/wilvelasco1006)
+
 ---
 
 Desarrollado con ❤ por Wilmer Yulian Ulcue Velasco
-
